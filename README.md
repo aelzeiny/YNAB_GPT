@@ -1,9 +1,9 @@
 # YNAB ChatGPT Categorizer
-Oh YNAB, you presume too much. The idea - absolute brilliant. [The app - it insists upon itself](https://youtu.be/mYAi5aI_NPc?si=HaQmCC_toGnjEQr6&t=21). Every other app that costs ~100 $/mo automates, visualizes, summarizes way more. 
+Oh YNAB, you presume too much. The idea - brilliant. The app - [it insists upon itself](https://youtu.be/mYAi5aI_NPc?si=HaQmCC_toGnjEQr6&t=21). Every other app that costs ~100 $/mo automates, visualizes, and summarizes far better. 
 
 Fine! YOU WIN! I do, in fact, need a budget... 
 
-This repo uses ChatGPT to auto-categorize transactions, and mark them with a visible blue flag in-app. State is statefully saved to a local SQLite DB.
+This repo uses ChatGPT to auto-categorize transactions, and mark them with a visible blue flag in-app. State between runs is serialized to a local SQLite DB to avoid unnecessary API calls.
 
 ![marked with a blue flag image](./docs/ynab-flag.png)
 
@@ -19,9 +19,9 @@ In the example shown in the image, the categories eligible for auto-categorizati
 Transactions that have been auto-categorized are marked with a blue flag.
 
 ## Cost
-You'll need to bring your own OpenAI GPT token. At the moment GPT 3.5 is $0.50 / 1M input tokens, and $1.5 / 1M output tokens [pricing page](https://openai.com/pricing). For me, each uncategorized transaction uses about ~85 input tokens, and ~2 output tokens. All things considered, very cheap.
+You'll need to bring your own OpenAI GPT token. At the moment GPT 3.5 is $0.50 / 1M input tokens, and $1.5 / 1M output tokens [[pricing page](https://openai.com/pricing)]. For me, each uncategorized transaction uses about ~85 input tokens, and ~2 output tokens. All things considered, very cheap.
 
-YNAB is 99 $/mo, and you don't pay any extra for an API key. You're rate-limited for 200 requests per hour. Each script run uses 3 requests. Meaning you can run this script every minute if you want.
+YNAB is 99 $/yr, and you don't pay any extra for an API key. You're rate-limited for 200 requests per hour. Each script run uses 3 requests. Meaning you can run this script every minute if you want.
 
 ## Build & Deployment
 
