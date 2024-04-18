@@ -22,6 +22,23 @@ You'll need to bring your own OpenAI GPT token. At the moment GPT 3.5 is $0.50 /
 
 YNAB is 99 $/mo, and you don't pay any extra for an API key. You're rate-limited for 200 requests per hour. Each script run uses 3 requests. Meaning you can run this script every minute if you want.
 
+## Build & Deployment
+
+Docker
+```
+docker build -t aelzeiny/ynab-gpt .
+docker run \
+    -e OPENAI_API_KEY=$OPENAI_API_KEY \
+    -e YNAB_API_KEY=$YNAB_API_KEY \
+    -v ./db.sqlite:/app/db.sqlite \
+    aelzeiny/ynab-gpt
+```
+
+Crontab, every 5 minutes (absolute paths recommended)
+```
+crontab -e
+*/1 * * * * docker run -e OPENAI_API_KEY=$OPENAI_API_KEY -e YNAB_API_KEY=$YNAB_API_KEY -v ./db.sqlite:/app/db.sqlite aelzeiny/ynab-gpt > path_to_logs.log
+```
 
 ## Unsolicited App Reviews
 I spent time in `YNAB`, `Copilot`, and `Monarch` and came out with a clear winner for my existing needs. Copilot was a VERY close second. If money wasn't tight, I would prefer Copilot. Monarch, a distant third. 
