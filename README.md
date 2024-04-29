@@ -42,11 +42,8 @@ crontab -e
 ```
 
 ## Unsolicited App Reviews
-I spent time in `YNAB`, `Copilot`, and `Monarch` and came out with a clear winner for my existing needs. Copilot was a VERY close second. If money wasn't tight, I would prefer Copilot. Monarch, a distant third. 
+I spent time in `YNAB`, `Copilot`, and `Monarch` and came out with a clear winner for my existing needs. Copilot was a VERY close second.
 I tried 3 apps for a few weeks, and here are my opinions.
 * `YNAB` -> **Best** for Budgeting. It’s in the name. **But** I wish it automated more.
-* `Copilot` -> **Best** for visualizations, auto-categorization, recurring expense tracking, dashboards, and overviews. But I wish it did budgeting.
+* `Copilot` -> **Best** for visualizations, auto-categorization, recurring expense tracking, dashboards, and overviews. But I wish it was better at budgeting and goals.
 * `Monarch` -> **Most** well-rounded. But I wish it did better at auto-categorization & recurring expenses & budgets instead of targets.
-
-## ToDo
-I should probably store data in a stateful sqlite database. Something queriable tabulating runs. YNAB API supports a feature called `server_knowledge` for delta-requests. This will likely save me tokens in the long-run.
